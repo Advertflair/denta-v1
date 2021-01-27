@@ -931,6 +931,13 @@ footer li:last-child {
   top: 0;
   transform: rotate(180deg);
 }
+.bg-fix {
+  background-image: url(../images/sec-2-left.svg),
+    url(../images/right-triangle-2.svg);
+  background-position: -5% 100%, 104% 0%;
+  background-repeat: no-repeat;
+  background-size: 10%, 10%;
+}
 /* Responsive */
 @media (max-width: 991px) {
   br {
@@ -1212,5 +1219,12 @@ footer li:last-child {
   }
   footer {
     padding: 90px 20px 60px !important;
+  }
+  .section-3 {
+    padding: 0 20px !important;
+  }
+  .bg-fix {
+    background: none;
+    padding: 0 20px !important;
   }
 }
