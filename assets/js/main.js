@@ -27,12 +27,26 @@ menu.addEventListener("click", burgerMenus);
 
 // Header Scroll
 let navigations = document.querySelector("nav");
-function fixedHeader(e) {
+console.log(navigations.clientHeight);
+document.querySelector(
+  ".banner,.headline"
+).style.marginTop = `${navigations.clientHeight}px`;
+function header() {
   if (scrollY > 80) {
     navigations.classList.add("fix-active");
+    document
+      .querySelector(".logo img")
+      .setAttribute("src", "./assets/images/denta-logo.webp");
   } else {
     navigations.classList.remove("fix-active");
+    document
+      .querySelector(".logo img")
+      .setAttribute("src", "./assets/images/denta-logo-white.svg");
   }
+}
+header();
+function fixedHeader(e) {
+  header();
 }
 window.addEventListener("scroll", fixedHeader);
 
@@ -42,7 +56,7 @@ var reviewSlider = new Swiper(".review-slider", {
   centeredSlides: true,
   spaceBetween: 50,
   loop: true,
-
+  // cssMode: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
