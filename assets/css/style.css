@@ -119,6 +119,17 @@ a {
 .tab-items li.active {
   color: #1f2734;
   background: transparent;
+  position: relative;
+  transition: 0.5s all ease;
+}
+.tab-items li.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background: rgb(62, 195, 178);
+  left: 0;
 }
 .dash {
   position: absolute;
@@ -148,14 +159,14 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 222;
-  background: #ffffff;
-  transition: 0.6s all ease;
+  background: #20b0a9;
+  transition: 0.6s top ease;
   top: 0;
-  box-shadow: 0 5px 6px -6px rgba(0, 0, 0, 0.6);
 }
 nav.fix-active {
   box-shadow: 0 5px 6px -6px rgba(0, 0, 0, 0.6);
   padding: 16px 70px;
+  background-color: #ffffff;
 }
 .container {
   width: 100%;
@@ -319,10 +330,11 @@ nav .btn:hover {
 }
 /* Section 2 */
 .section-2 {
-  background-image: url(../images/sec-2-left.svg);
-  background-position: -5% 80%;
+  background-image: url(../images/sec-2-left.svg),
+    url(../images/right-triangle-2.svg);
+  background-position: -5% 80%, 110% 0%;
   background-repeat: no-repeat;
-  background-size: 10%;
+  background-size: 10%, 20%;
 }
 .section-2 h1 {
   margin: 0 0 20px 0;
@@ -595,14 +607,14 @@ footer li:last-child {
   transition: all 0.4s ease-in-out !important;
 }
 .headline .gradient-btn {
-  background: #fff;
+  background: #1f2734;
   background-size: 300% 100%;
-  color: #1f2734;
+  color: #fff;
   transition: all 0.4s ease-in-out !important;
 }
 .headline .gradient-btn:hover {
-  background-color: #1f2734;
-  color: #fff;
+  background-color: #fff;
+  color: #1f2734;
 }
 .gradient-btn:hover {
   background-position: 100% 0;
@@ -915,7 +927,10 @@ footer li:last-child {
 .unique-btn {
   display: none;
 }
-
+.section-4 .hero-waves {
+  top: 0;
+  transform: rotate(180deg);
+}
 /* Responsive */
 @media (max-width: 991px) {
   br {
@@ -944,10 +959,21 @@ footer li:last-child {
   }
   .menu-active span {
     background-color: #ffffff;
+    transition: 0.5s transform ease;
   }
   .burger-menu span.line-2 {
     margin: 4px 0;
   }
+  .menu-active span.line-1 {
+    transform: translate(0px, 0) rotate(45deg);
+  }
+  .menu-active span.line-3 {
+    transform: translate(0px, -4px) rotate(-45deg);
+  }
+  .menu-active span.line-2 {
+    display: none;
+  }
+
   nav .overall-menus {
     position: fixed;
     right: -100%;
@@ -1020,6 +1046,7 @@ footer li:last-child {
   nav.fix-active {
     padding: 30px 40px;
   }
+
   .section-spacing {
     padding: 70px 40px;
   }
@@ -1182,5 +1209,8 @@ footer li:last-child {
   }
   .tab-slider .swiper-slide:nth-child(odd) {
     background-color: #d8f7ed;
+  }
+  footer {
+    padding: 90px 20px 60px !important;
   }
 }
