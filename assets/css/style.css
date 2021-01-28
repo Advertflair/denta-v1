@@ -288,8 +288,9 @@ nav .btn:hover {
 .banner .left-content p {
   margin: 0 0 60px 0;
 }
-.banner figure {
+.banner figure img{
   /* transform: translateX(22%) !important; */
+  width:100%;
 }
 .banner .convo {
   background: #1f2734;
