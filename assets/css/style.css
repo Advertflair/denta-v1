@@ -648,9 +648,13 @@ footer li:last-child {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-size: 100%;
+  background-size: 90%;
   top: 50%;
   transform: translateY(-50%);
+  background-repeat: no-repeat;
+}
+.grad-play-btn:hover::before {
+  background-image: url(../images/play-button-fill.svg);
 }
 .grad-play-btn .text {
   padding: 0 0 0 50px;
@@ -949,9 +953,34 @@ footer li:last-child {
   background-size: 10%, 10%;
 }
 /* Responsive */
+/* Ipad Landscape */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  br {
+    display: none;
+  }
+  .headline {
+    padding: 125px 70px;
+  }
+  .tab-title h2 {
+    text-align: left;
+  }
+  nav .logo {
+    margin: 0;
+  }
+  nav .left-sec {
+    margin: 0 40px 0 0;
+  }
+  nav {
+    background: #21b1a9;
+  }
+}
+/* Ipad */
 @media (max-width: 991px) {
   br {
     display: none;
+  }
+  .fix-active .logo img {
+    width: 49%;
   }
   .burger-menu {
     display: flex;
@@ -1051,7 +1080,7 @@ footer li:last-child {
     flex-basis: 80%;
   }
   nav .left-sec img {
-    width: 50%;
+    width: 33%;
   }
   .container {
     max-width: 100%;
@@ -1159,6 +1188,9 @@ footer li:last-child {
   }
   .section-spacing {
     padding: 60px 20px;
+  }
+  .fix-active .logo img {
+    width: 42%;
   }
   nav,
   nav.fix-active {
