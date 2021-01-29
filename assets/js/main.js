@@ -143,10 +143,6 @@ listItem.forEach((item, index) => {
   });
 });
 
-if ($(window).width() <= 991) {
-  tabSlider.destroy();
-}
-
 // Accordion
 let accordionTab = $(".accordion .accordion-title");
 accordionTab.each(function (index, ele) {
@@ -171,4 +167,8 @@ accordionTab.each(function (index, ele) {
       $(ele).parent().find("img").attr("src", "./assets/images/add.svg");
     }
   });
+});
+
+window.addEventListener("resize", function () {
+  location.reload();
 });
