@@ -264,6 +264,9 @@ nav .btn:hover {
 .banner .see-action img {
   width: 20%;
 }
+.left-content h1 b {
+  font-weight: 500;
+}
 .gt-started {
   background-color: #1f2734;
   color: #ffffff;
@@ -288,9 +291,9 @@ nav .btn:hover {
 .banner .left-content p {
   margin: 0 0 60px 0;
 }
-.banner figure img{
+.banner figure img {
   /* transform: translateX(22%) !important; */
-  width:100%;
+  width: 100%;
 }
 .banner .convo {
   background: #1f2734;
@@ -872,6 +875,12 @@ footer li:last-child {
 .review-inner {
   padding: 50px 60px;
 
+  text-align: left;
+}
+.last-slide .review-inner p {
+  text-align: right;
+}
+.last-slide.swiper-slide-active .review-inner p {
   text-align: left;
 }
 .review-inner figure {
